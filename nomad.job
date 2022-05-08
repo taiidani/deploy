@@ -11,11 +11,16 @@ job "deployer" {
 
   group "app" {
     task "app" {
-      driver = "docker"
+      driver = "exec"
+
+      artifact {
+        source      = "https://github.com/taiidani/deploy/releases/download/v{{ .Payload.Version }}/deploy_{{ .Payload.Version }}_Linux_x86_64.tar.gz"
+        destination = "local/deploy"
+      }
 
       config {
-        image = "ghcr.io/taiidani/deploy:{{ .Payload.Tag }}"
-        ports = ["http"]
+        command = "deploy/deploy"
+        ports   = ["http"]
       }
 
       template {
@@ -25,7 +30,6 @@ job "deployer" {
         destination = "${NOMAD_SECRETS_DIR}/secrets.env"
         env         = true
       }
-
     }
 
     service {
@@ -49,8 +53,8 @@ job "deployer" {
     }
 
     network {
-      mode = "bridge"
-      port "http" { to = 8080 }
+      mode = "host"
+      port "http" { static = 8082 }
     }
   }
 }

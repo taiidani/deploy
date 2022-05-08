@@ -28,7 +28,7 @@ func serve(ctx context.Context) error {
 	}
 
 	srv := http.Server{
-		Addr:    ":8080",
+		Addr:    ":8082",
 		Handler: mux,
 	}
 
