@@ -14,18 +14,17 @@ job "deployer" {
       driver = "exec"
 
       artifact {
-        source      = "https://github.com/taiidani/deploy/releases/download/v{{ .Payload.Version }}/deploy_{{ .Payload.Version }}_Linux_x86_64.tar.gz"
+        source      = "https://github.com/taiidani/deploy/releases/download/v{{ .Payload.Version }}/deploy_{{ .Payload.Version }}_linux_amd64.tar.gz"
         destination = "local/deploy"
       }
 
       config {
         command = "deploy/deploy"
-        ports   = ["http"]
       }
 
       template {
         data        = <<EOF
-            WEBHOOK_HMAC="{{with secret "deploy/kv/webhook"}}{{ .Data.data.hmac }}{{end}}"
+            WEBHOOK_HMAC="{{with secret "deploy/webhook"}}{{ .Data.data.hmac }}{{end}}"
         EOF
         destination = "${NOMAD_SECRETS_DIR}/secrets.env"
         env         = true

@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -10,6 +11,8 @@ import (
 
 	"github.com/taiidani/deploy/internal"
 )
+
+const defaultBind = ":8082"
 
 func main() {
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
@@ -28,13 +31,15 @@ func serve(ctx context.Context) error {
 	}
 
 	srv := http.Server{
-		Addr:    ":8082",
+		Addr:    defaultBind,
 		Handler: mux,
 	}
 
+	fmt.Println("Server started at", defaultBind)
 	go srv.ListenAndServe()
 	<-ctx.Done()
 
+	fmt.Println("Server shutting down")
 	shutdown, cancel := context.WithTimeout(context.Background(), time.Second*30)
 	defer cancel()
 	return srv.Shutdown(shutdown)
