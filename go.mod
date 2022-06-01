@@ -3,7 +3,7 @@ module github.com/taiidani/deploy
 go 1.18
 
 require (
-	github.com/google/go-github/v44 v44.0.0
+	github.com/google/go-github/v44 v44.1.0
 	github.com/hashicorp/nomad/api v0.0.0-20220506174431-b5665129cd1f
 )
 
