@@ -1,9 +1,9 @@
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/docker/go-units v0.3.3 h1:Xk8S3Xj5sLGlG5g67hJmYMmUgXv5N4PhkjJHHqrwnTk=
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
-github.com/google/go-cmp v0.5.7 h1:81/ik6ipDQS2aGcBfIN5dHDB36BwrStyeAQquSYCV4o=
-github.com/google/go-github/v44 v44.0.0 h1:1Lfk2mhM7pTWqwGC6Ft16S3c2LBw8DLcw9TOhYoQ9zE=
-github.com/google/go-github/v44 v44.0.0/go.mod h1:CqZYQRxOcb81M+ufZB7duWNS0lFfas/r7cEAKpLBYww=
+github.com/google/go-cmp v0.5.8 h1:e6P7q2lk1O+qJJb4BtCQXlK8vWEO8V1ZeuEdJNOqZyg=
+github.com/google/go-github/v44 v44.1.0 h1:shWPaufgdhr+Ad4eo/pZv9ORTxFpsxPEPEuuXAKIQGA=
+github.com/google/go-github/v44 v44.1.0/go.mod h1:iWn00mWcP6PRWHhXm0zuFJ8wbEjE5AGO5D5HXYM4zgw=
 github.com/google/go-querystring v1.1.0 h1:AnCroh3fv4ZBgVIf1Iwtovgjaw/GiKJo8M8yD/fhyJ8=
 github.com/google/go-querystring v1.1.0/go.mod h1:Kcdr2DB4koayq7X8pmAG4sNG59So17icRSOU623lUBU=
 github.com/gorilla/websocket v1.4.2 h1:+/TMaTYc4QFitKJxsQ7Yye35DkWvkdLcvGKqM+x0Ufc=
